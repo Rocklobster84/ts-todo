@@ -1,6 +1,19 @@
 "use strict";
-function printDouble(msg) {
-    console.log(msg);
-    console.log(msg);
+// non null assertion operator
+const btn = document.getElementById("btn");
+const input = document.getElementById("todoinput");
+const form = document.querySelector("form");
+const list = document.getElementById("todolist");
+function handleSubmit(e) {
+    e.preventDefault();
+    const newTodoText = input.value;
+    const newLI = document.createElement("LI");
+    newLI.append(newTodoText);
+    list.append(newLI);
+    input.value = "";
 }
-printDouble("Hello World");
+form.addEventListener("submit", handleSubmit);
+//btn.addEventListener("click", function (){
+//  alert(input.value);
+// input.value="";
+//});
